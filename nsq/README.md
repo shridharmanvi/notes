@@ -14,9 +14,11 @@ Introductory talk on nsq:  https://www.youtube.com/watch?v=OwD-W7uU2zU
 * Supports logging of messages (Just another consumer) - all above patterns above hold true for this
 * If one of the consumers die, messages are adjusted to be shared between existing consumers. Once it comes back up the new node is considered for message distribution.
 * If no consumers are available, messages are held within nsqd to a threshold before flushing it out to disk
-
+* Messages are picked up once consumers are back
 
 ### Components:
 * nsqd - Demon which queues messages on producer side (Usually every producer is accompained by a nsqd demon)
 * nsqlookupd - State keeper of the cluster
 * nsqadmin - UI metrics reporter for all topics
+
+##### Sample producer and consumer scripts included
