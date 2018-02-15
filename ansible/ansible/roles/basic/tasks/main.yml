@@ -1,0 +1,7 @@
+---
+- name: "Installing vim"
+  apt: pkg=vim state=installed
+
+- name: "Installing tree"
+  become: true
+  apt: pkg=tree
